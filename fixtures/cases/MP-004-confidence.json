@@ -1,0 +1,30 @@
+{
+  "fixture_id": "MP-004",
+  "title": "Confidence semantics",
+  "status": "draft",
+  "category": "confidence",
+  "description": "Synthetic scenario for evaluating export/import portability.",
+  "source_memory": {
+    "id": "mem-syn-004",
+    "content": "Synthetic claim.",
+    "metadata": {
+      "confidence": 0.65,
+      "confidence_scale": "0-1",
+      "source": "mock-source"
+    }
+  },
+  "migration": {
+    "operation": "export-import",
+    "notes": "Implementation-neutral; target behavior not tested."
+  },
+  "expected": [
+    "Value and scale survive or conversion is documented.",
+    "Unknown confidence is not upgraded to certainty."
+  ],
+  "loss_classification": [
+    "preserved"
+  ],
+  "notes": [
+    "Illustrative only."
+  ]
+}
