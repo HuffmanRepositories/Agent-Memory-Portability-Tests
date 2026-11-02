@@ -1,0 +1,25 @@
+{
+  "fixture_id": "MP-NNN",
+  "title": "Short synthetic portability scenario",
+  "status": "draft",
+  "category": "provenance",
+  "description": "What migration behavior is evaluated.",
+  "source_memory": {
+    "id": "synthetic-id",
+    "content": "Synthetic content only",
+    "metadata": {}
+  },
+  "migration": {
+    "operation": "export-import",
+    "notes": "Implementation-neutral"
+  },
+  "expected": [
+    "A verifiable expected outcome."
+  ],
+  "loss_classification": [
+    "preserved"
+  ],
+  "notes": [
+    "Draft; not implementation evidence."
+  ]
+}
