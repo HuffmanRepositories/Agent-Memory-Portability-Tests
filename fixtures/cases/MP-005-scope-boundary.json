@@ -1,0 +1,31 @@
+{
+  "fixture_id": "MP-005",
+  "title": "Private project scope must not widen",
+  "status": "draft",
+  "category": "scope",
+  "description": "Synthetic scenario for evaluating export/import portability.",
+  "source_memory": {
+    "id": "mem-syn-005",
+    "content": "Synthetic project note.",
+    "metadata": {
+      "scope": "project:alpha",
+      "visibility": "private",
+      "owner": "synthetic-owner"
+    }
+  },
+  "migration": {
+    "operation": "export-import",
+    "notes": "Implementation-neutral; target behavior not tested."
+  },
+  "expected": [
+    "Imported memory remains project-private.",
+    "If scope cannot be represented, block or report unsafe widening; do not silently globalize."
+  ],
+  "loss_classification": [
+    "unsafe_widening",
+    "unsupported"
+  ],
+  "notes": [
+    "Synthetic scope-boundary test."
+  ]
+}
