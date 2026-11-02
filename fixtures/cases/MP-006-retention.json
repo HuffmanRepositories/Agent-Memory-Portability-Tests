@@ -1,0 +1,29 @@
+{
+  "fixture_id": "MP-006",
+  "title": "Retention and expiry",
+  "status": "draft",
+  "category": "retention",
+  "description": "Synthetic scenario for evaluating export/import portability.",
+  "source_memory": {
+    "id": "mem-syn-006",
+    "content": "Synthetic temporary memory.",
+    "metadata": {
+      "expires_at": "2030-03-01T00:00:00Z",
+      "retention": "delete-after-expiry"
+    }
+  },
+  "migration": {
+    "operation": "export-import",
+    "notes": "Implementation-neutral; target behavior not tested."
+  },
+  "expected": [
+    "Expiry/retention survive or loss is explicit.",
+    "Import does not unintentionally reset expiry."
+  ],
+  "loss_classification": [
+    "preserved"
+  ],
+  "notes": [
+    "Synthetic dates."
+  ]
+}
