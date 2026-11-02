@@ -1,0 +1,37 @@
+{
+  "fixture_id": "MP-010",
+  "title": "Unsupported embedding payload",
+  "status": "draft",
+  "category": "unsupported-payload",
+  "description": "Synthetic scenario for evaluating export/import portability.",
+  "source_memory": {
+    "id": "mem-syn-010",
+    "content": "Synthetic embedding example.",
+    "metadata": {
+      "embedding": {
+        "model": "mock-embed-v1",
+        "dimensions": 3,
+        "values": [
+          0.1,
+          0.2,
+          0.3
+        ]
+      }
+    }
+  },
+  "migration": {
+    "operation": "export-import",
+    "notes": "Implementation-neutral; target behavior not tested."
+  },
+  "expected": [
+    "Target reports unsupported embedding payload.",
+    "Text memory is not falsely reported as fully preserved."
+  ],
+  "loss_classification": [
+    "unsupported",
+    "dropped"
+  ],
+  "notes": [
+    "Mock vector; not a real model embedding."
+  ]
+}
