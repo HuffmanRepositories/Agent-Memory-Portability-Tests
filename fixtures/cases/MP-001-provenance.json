@@ -1,0 +1,30 @@
+{
+  "fixture_id": "MP-001",
+  "title": "Source and author provenance",
+  "status": "draft",
+  "category": "provenance",
+  "description": "Synthetic scenario for evaluating export/import portability.",
+  "source_memory": {
+    "id": "mem-syn-001",
+    "content": "Synthetic preference: concise summaries.",
+    "metadata": {
+      "author": "synthetic-user",
+      "source": "mock-session-12",
+      "confidence": 0.92
+    }
+  },
+  "migration": {
+    "operation": "export-import",
+    "notes": "Implementation-neutral; target behavior not tested."
+  },
+  "expected": [
+    "Author/source remain attributable.",
+    "Confidence is preserved or conversion documented."
+  ],
+  "loss_classification": [
+    "preserved"
+  ],
+  "notes": [
+    "Synthetic only."
+  ]
+}
