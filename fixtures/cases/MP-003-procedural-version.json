@@ -1,0 +1,30 @@
+{
+  "fixture_id": "MP-003",
+  "title": "Procedural instruction attribution",
+  "status": "draft",
+  "category": "provenance",
+  "description": "Synthetic scenario for evaluating export/import portability.",
+  "source_memory": {
+    "id": "mem-syn-003",
+    "content": "Mock check before mock report.",
+    "metadata": {
+      "memory_type": "procedural",
+      "source_document": "mock-guide",
+      "source_version": "v2.3"
+    }
+  },
+  "migration": {
+    "operation": "export-import",
+    "notes": "Implementation-neutral; target behavior not tested."
+  },
+  "expected": [
+    "Procedure type and source/version survive or loss is reported.",
+    "Import does not silently mark source as verified/current."
+  ],
+  "loss_classification": [
+    "preserved"
+  ],
+  "notes": [
+    "Not operational advice."
+  ]
+}
