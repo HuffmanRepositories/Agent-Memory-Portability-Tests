@@ -23,3 +23,7 @@ The validator checks fixture structure only. It does not test implementations, s
 All fixtures are synthetic. No user memory exports, secrets, or personal data are included.
 
 See docs/fixture-format.md, docs/loss-taxonomy.md, docs/migration-review-checklist.md, and docs/fixture-status.md.
+
+## Ecosystem directory
+
+This project is part of the [HuffmanRepositories public ecosystem](https://github.com/HuffmanRepositories/Huffman-Ecosystem-Root). Use the directory for project routing, human and AI onboarding, shared terminology, governance, and related workstreams. This repository's own README and specifications remain authoritative for its scope, maturity, and validation status.
