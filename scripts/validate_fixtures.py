@@ -51,7 +51,7 @@ def validate():
 def main():
     files, errors = validate()
     if errors:
-        print("\\n".join("ERROR: " + e for e in errors))
+        print("\n".join("ERROR: " + e for e in errors))
         return 1
     print(f"Validated {len(files)} fixture(s); structural checks only.")
     return 0
