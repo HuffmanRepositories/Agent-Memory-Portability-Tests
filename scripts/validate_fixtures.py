@@ -19,7 +19,7 @@ def validate():
     for path in files:
         try:
             data = json.loads(path.read_text(encoding="utf-8"))
-        except Exception as exc:
+        except (OSError, json.JSONDecodeError) as exc:
             errors.append(f"{path.name}: invalid JSON: {exc}")
             continue
         if not isinstance(data, dict):
@@ -29,16 +29,17 @@ def validate():
         if missing:
             errors.append(f"{path.name}: missing fields: {', '.join(sorted(missing))}")
         fid = data.get("fixture_id")
-        if not isinstance(fid, str) or not fid:
+        if not isinstance(fid, str) or not fid.strip():
             errors.append(f"{path.name}: fixture_id must be non-empty string")
         elif fid in seen:
             errors.append(f"{path.name}: duplicate fixture_id {fid}")
         else:
             seen.add(fid)
-        if data.get("status") not in VALID_STATUS:
+        status = data.get("status")
+        if not isinstance(status, str) or status not in VALID_STATUS:
             errors.append(f"{path.name}: invalid status")
         losses = data.get("loss_classification")
-        if not isinstance(losses, list) or not losses or any(x not in VALID_LOSS for x in losses):
+        if not isinstance(losses, list) or not losses or any(not isinstance(x, str) or x not in VALID_LOSS for x in losses):
             errors.append(f"{path.name}: invalid loss_classification")
         if not isinstance(data.get("expected"), list) or not data.get("expected"):
             errors.append(f"{path.name}: expected must be non-empty list")
@@ -51,7 +52,7 @@ def validate():
 def main():
     files, errors = validate()
     if errors:
-        print("\n".join("ERROR: " + e for e in errors))
+        print("\\n".join("ERROR: " + e for e in errors))
         return 1
     print(f"Validated {len(files)} fixture(s); structural checks only.")
     return 0
