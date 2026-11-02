@@ -1,5 +1,8 @@
 # Agent Memory Portability Tests
 
+[Start here](START-HERE.md) · [AI agent guidance](AGENTS.md)
+
+
 A neutral, synthetic test corpus for reviewing whether agent-memory export/import and migration workflows preserve meaning, metadata, and safety-relevant state.
 
 **Status:** early draft / research prototype. Fixtures are illustrative; they are not a standard, certification suite, or claim of interoperability.
