@@ -1,0 +1,37 @@
+{
+  "fixture_id": "MP-008",
+  "title": "Conflicting revisions preserve history",
+  "status": "draft",
+  "category": "revision-history",
+  "description": "Synthetic scenario for evaluating export/import portability.",
+  "source_memory": {
+    "id": "mem-syn-008",
+    "content": "Revision B synthetic content.",
+    "metadata": {
+      "revision": 7,
+      "previous_revision": 6,
+      "conflict": true,
+      "history": [
+        {
+          "revision": 6,
+          "content": "Revision A synthetic content."
+        }
+      ]
+    }
+  },
+  "migration": {
+    "operation": "export-import",
+    "notes": "Implementation-neutral; target behavior not tested."
+  },
+  "expected": [
+    "History/conflict retained or loss reported.",
+    "Silent last-write-wins is not presented as history-preserving."
+  ],
+  "loss_classification": [
+    "preserved",
+    "ambiguous"
+  ],
+  "notes": [
+    "No universal conflict policy assumed."
+  ]
+}
