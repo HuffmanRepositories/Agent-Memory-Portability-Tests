@@ -1,0 +1,30 @@
+{
+  "fixture_id": "MP-007",
+  "title": "Deletion tombstone prevents resurrection",
+  "status": "draft",
+  "category": "deletion",
+  "description": "Synthetic scenario for evaluating export/import portability.",
+  "source_memory": {
+    "id": "mem-syn-007",
+    "content": null,
+    "metadata": {
+      "deleted": true,
+      "tombstone_at": "2030-01-20T10:00:00Z",
+      "revision": 8
+    }
+  },
+  "migration": {
+    "operation": "export-import",
+    "notes": "Implementation-neutral; target behavior not tested."
+  },
+  "expected": [
+    "Deleted item is not resurrected from stale replica revision 5.",
+    "Deletion state persists or conflict is surfaced."
+  ],
+  "loss_classification": [
+    "preserved"
+  ],
+  "notes": [
+    "Depends on documented deletion model."
+  ]
+}
