@@ -1,0 +1,29 @@
+{
+  "fixture_id": "MP-002",
+  "title": "Event time differs from import time",
+  "status": "draft",
+  "category": "timestamps",
+  "description": "Synthetic scenario for evaluating export/import portability.",
+  "source_memory": {
+    "id": "mem-syn-002",
+    "content": "Synthetic event occurred on 2030-01-05.",
+    "metadata": {
+      "event_time": "2030-01-05T09:00:00Z",
+      "created_at": "2030-01-05T09:05:00Z"
+    }
+  },
+  "migration": {
+    "operation": "export-import",
+    "notes": "Implementation-neutral; target behavior not tested."
+  },
+  "expected": [
+    "Event/creation timestamps are not replaced with import time.",
+    "Timestamp conversions are explicit."
+  ],
+  "loss_classification": [
+    "preserved"
+  ],
+  "notes": [
+    "Synthetic future dates are deliberate."
+  ]
+}
